@@ -1,0 +1,769 @@
+/* ========================= */
+/* FONTS */
+/* ========================= */
+
+@font-face {
+  font-family: 'cronde';
+  src: url('fonts/CRONDE.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'jost';
+  src: url('fonts/JOST.ttf') format('truetype');
+}
+
+/* ========================= */
+/* GLOBAL RESET */
+/* ========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  background: #0a0a0a;
+  color: #f5f5f5;
+  font-family: 'cronde', serif;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ========================= */
+/* HERO SECTION */
+/* ========================= */
+.container_title img {
+  display: none;
+}
+.section_title {
+  min-height: 100svh;
+  background: url("images/hero.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(20px, 5vw, 40px);
+}
+
+.container_title {
+  max-width: 1200px;
+  color: #EDECE9;
+}
+
+.names {
+  font-size: clamp(48px, 12vw, 170px);
+  line-height: 1.1;
+}
+
+.and {
+  font-family: "Passions Conflict", cursive;
+  font-size: clamp(40px, 8vw, 120px);
+  margin: 0 clamp(6px, 2vw, 12px);
+  opacity: 0.8;
+}
+
+.date {
+  font-family: 'jost', sans-serif;
+  margin-top: clamp(20px, 4vw, 50px);
+  font-size: clamp(12px, 2.5vw, 20px);
+  letter-spacing: clamp(2px, 1vw, 4.8px);
+  text-transform: uppercase;
+}
+
+/* ========================= */
+/* INVITE SECTION */
+/* ========================= */
+
+.section_invite {
+  background: #EDECE9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 190px 50px;
+  text-align: center;
+}
+
+.invite_text {
+  max-width: 900px;
+}
+
+.youare {
+  font-family: "Passions Conflict", cursive;
+  font-size: clamp(50px, 10vw, 120px);
+  color: #490618;
+}
+
+.invited {
+  font-size: 20px;
+  margin-top: clamp(-40px, -4vw, -60px);
+  line-height: 1;
+  color: #490618;
+}
+.invite_text img {
+  height: 175px;
+  margin: 0 auto 60px;
+}
+.paragraph {
+  font-family: "jost", sans-serif;
+  font-size: 20px;
+  line-height: 1.9;
+  margin-top: clamp(20px, 4vw, 30px);
+  color: #555;
+}
+
+/* ========================= */
+/* CALENDAR */
+/* ========================= */
+
+.calendar {
+  padding: 100px 0 0;
+  text-align: center;
+}
+
+.month {
+  font-size: 50px;
+  margin: 0 0 50px;
+  color: #4E0004;
+}
+
+.weekdays,
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.weekdays div {
+  font-family: "jost", sans-serif;
+  font-size: clamp(12px, 2.5vw, 18px);
+  padding: 0;
+  position: relative;
+  color: #490618;
+  letter-spacing: 4px;
+}
+
+.days div {
+  font-family: "jost", sans-serif;
+  font-size: clamp(12px, 2.5vw, 18px);
+  padding-top: 40px;
+  position: relative;
+  color: #4a4a4a;
+}
+
+.days div.today {
+  color: white;
+  z-index: 2;
+}
+
+.days div.today::before {
+  content: "";
+  position: absolute;
+  top: 79%;
+  left: 51%;
+  width: clamp(30px, 6vw, 45px);
+  height: clamp(30px, 6vw, 45px);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: #4E0004;
+  animation: pulseFade 1.5s infinite ease-in-out;
+  z-index: -1;
+}
+
+@keyframes pulseFade {
+  0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.4; transform: translate(-50%, -50%) scale(1.2); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* ========================= */
+/* LOCATION SECTION */
+/* ========================= */
+
+.section_location {
+  display: flex;
+}
+
+.location-left {
+  flex: 2;
+  background: url("images/locationbg.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10% 5%;
+}
+
+.location-right {
+  flex: 1;
+  background: #4E0004;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(40px, 6vw, 80px);
+  gap: 10%;
+}
+
+.details {
+  text-align: center;
+  color: #DDD9D3;
+  max-width: 400px;
+}
+
+.details .details_title {
+ font-family: "Passions Conflict", cursive;
+  font-size: 100px;
+  margin-bottom: 25px;
+  line-height: 80%;
+}
+
+.details p {
+  font-family: "jost", sans-serif;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  font-size: 20px;
+  
+}
+
+.img-btn,
+.img-btn1 {
+  display: inline-block;
+  width: 220px;
+  height: 50px;
+  background: url("images/viewbutton.png") center/contain no-repeat;
+  text-indent: -9999px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ========================= */
+/* TWO-SECTION PAGE (DRESSCODE) */
+/* ========================= */
+
+.section_dresscode {
+  display: flex;
+}
+
+/* Shared section styles */
+.section {
+  flex: 1;
+  padding: 150px 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Left section = 40% */
+.section_left {
+  flex: 0 0 40%;
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+/* Right section = 60% */
+.section_right {
+  flex: 0 0 60%;
+  background-image: url("images/dress.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vw;
+}
+
+/* Dresscode text */
+.dresscode_dress,
+.dresscode_code {
+  font-size: clamp(50px, 10vw, 170px);
+  color: #EDECE9;
+  line-height: 0.9;
+}
+
+.dresscode_code {
+  margin-top: -0.3em;
+}
+.dresscode_desc {
+  font-family: "jost", sans-serif;
+  font-weight: 300;
+  margin: 10% 0 10% 15%;
+  max-width: 400px;
+  color: #999;
+  font-size: 20px;
+}
+
+/* Colors section */
+.colors {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ========================= */
+/* GIFT GUIDE SECTION */
+/* ========================= */
+
+.section_gift-guide {
+  background-color: #f4f1ec;
+  padding: 150px 50px;
+  text-align: center;
+}
+
+.section_gift-guide-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.gift_guide {
+    width: auto;
+    max-width: 100%;
+    height: 200px;
+    margin: 0 auto 80px;
+}
+
+.gift-description {
+  font-family: "jost", sans-serif;
+  font-size: 20px;
+  line-height: 1.8;
+  color: #555;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.event_section {
+    display: flex;
+    flex-direction: row;
+    align-items: self-start;
+    justify-content: space-between;
+    width: 100%;
+    padding: 150px 5%;
+    background-image: url(images/schedbg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+
+/* Title section */
+.schedtitle_size {
+  width: 45%;
+  max-width: 500px;
+  height: auto;
+  margin: 0;
+}
+
+/* Time section */
+.schedtitle_time {
+  width: 50%; /* Adjust relative to container */
+  max-width: 866px;
+  height: auto;
+  text-align: center;
+}
+
+/* Make images inside scale properly */
+.schedtitle_size img,
+.schedtitle_time img {
+  width: 100%;
+  height: auto;
+}
+.schedtitle_time_mobile {
+  display: none;
+}
+.entourage_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f1ec;
+  padding: 150px 50px;
+  text-align: center;
+}
+.entourage_list_mobile
+{
+  display:none;
+}
+
+.entourage_size {
+  width: 100%;
+  max-width: 600px; /* keeps it elegant on large screens */
+  height: auto;
+  margin-bottom: clamp(40px, 6vw, 60px);
+}
+
+.entourage_list {
+  width: 100%;
+  max-width: 1600px; /* bigger on desktop */
+  height: auto;
+}
+
+/* Make sure images scale properly */
+.entourage_size img,
+.entourage_list img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container_faqs {
+  display: flex;
+}
+
+/* LEFT SIDE */
+.faqs_left {
+  width: 55%;
+  background-image: url("images/faqsbg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* RIGHT SIDE */
+.faqs_right {
+  width: 45%;
+  padding: 150px 6%;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Georgia', serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FAQ Section */
+.faq-section {
+  width: 100%;
+}
+
+.faq-title {
+    font-family: 'cronde', serif;
+  font-size: 130px;
+  line-height: 100%;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+/* Accordion */
+.accordion-item {
+  font-family: 'jost', sans-serif;
+  border-bottom: 1px solid #7a0000;
+}
+
+.accordion-item input {
+  display: none;
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 40px 0;
+  font-size: 18px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.accordion-header:hover {
+  opacity: 0.7;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when open */
+.accordion-item input:checked + .accordion-header .arrow {
+  transform: rotate(90deg);
+}
+
+/* Accordion Content */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  letter-spacing: 2px;
+  transition: max-height 0.4s ease;
+}
+
+.accordion-content p {
+padding: 0 0 25px 30px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #999999;
+    letter-spacing: 0;
+}
+
+/* Show content */
+.accordion-item input:checked ~ .accordion-content {
+  max-height: max-content;
+}
+
+/* RSVP SECTION */
+/* ========================= */
+
+.rsvp_section {
+  background-color: #f4f1ec;
+  padding: 130px 50px;
+  text-align: center;
+}
+
+.rsvp_container {
+  margin: 0 auto;
+}
+
+/* Script Heading */
+.rsvp_title {
+    font-family: "Passions Conflict", cursive;
+    font-size: 120px;
+    color: #6b0f0b;
+    line-height: 60%;
+}
+
+/* Subtext */
+.rsvp_subtext {
+  font-family: "jost", sans-serif;
+  font-size: clamp(14px, 2.5vw, 18px);
+  margin: 50px 0;
+  color: #444;
+}
+
+.rsvp_subtext span {
+  font-weight: 600;
+  color: #6b0f0b;
+}
+
+/* Button */
+.rsvp_button {
+   display: inline-block;
+  width: 220px;
+  height: 50px;
+  background: url("images/rsvp.png") center/contain no-repeat;
+  text-indent: -9999px;
+  border: none;
+  cursor: pointer;
+}
+.footer{
+display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "jost", sans-serif;
+    font-size: 14px;
+    border-top: 1px solid rgba(0, 0, 0, .30);
+    padding: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #777;
+    background-color: #f4f1ec;
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+  .rsvp_title { 
+    font-size: 80px;
+      }
+.invite_text img {
+    height: 100px;
+}
+.gift_guide {
+    height: 130px;
+    margin: 0 auto 60px;
+}
+.calendar {
+    padding: 50px 0 0;
+}
+  .container_faqs {
+    flex-direction: column;
+  }
+
+  .faqs_left {
+    width: 100%;
+    height: 50vh; /* Hero image height */
+  }
+
+  .faqs_right {
+    width: 100%;
+    padding: 100px 50px;
+    display: block;
+  }
+
+  .faq-title {
+    margin-bottom: 40px;
+  }
+
+
+
+  .accordion-content p {
+    padding-left: 20px;
+  }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+.invite_text img {
+    height: 100px;
+}
+.gift_guide {
+    height: 130px;
+    margin: 0 auto 60px;
+}
+.calendar {
+    padding: 50px 0 0;
+}
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+
+@media (max-width: 768px) {
+  .entourage_list {
+    width: 100%;
+    max-width: 100%;
+  }
+  .section_invite {
+    padding: 120px 50px;
+  }
+}
+/* Tablets */
+@media (max-width: 992px) {
+  .paragraph br {
+    display: none;
+  }
+  .event_section {
+    flex-direction: column; /* Stack vertically */
+    padding: 30px 15px;
+      background-size: cover;
+  }
+  .schedtitle_size {
+        width: 330px;
+        margin: 0 auto;
+  }
+  .schedtitle_time {
+    display: none;
+  }
+  .schedtitle_time_mobile {
+  width: 330px;
+  display: block;
+  margin: 80px auto 0;
+ 
+    }
+    .entourage_size{
+      width:330px;
+    }
+  .entourage_list{
+    display:none;
+  }
+  .entourage_list_mobile{
+    display:block;
+    width:330px;
+  }
+  }
+
+/* Mobile */
+@media (max-width: 480px) {
+  .event_section {
+    padding: 20px 10px;
+      background-size: cover;
+  }
+  .schedtitle_size,
+  .schedtitle_time {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 992px) {
+  /* Location section stacks */
+  .section_location {
+    flex-direction: column;
+  }
+  .location-right {
+    gap: 50px;
+    padding: 80px 30px;
+  }
+  .location-left,
+  .location-right {
+    width: 100%;
+    min-height: auto;
+  }
+.dresscode img {
+    max-width: max-content;
+    height: 150px;
+    width: auto;
+    margin: 0 auto;
+}
+.dresscode_desc {
+    margin: 60px 0;
+    max-width: 100%;
+  }
+.section.left, .section_invite, .section_gift-guide, .event_section, .entourage_section, .rsvp_section {
+    padding: 100px 50px;
+}
+  /* Two-section page stacks */
+  .section_dresscode {
+    flex-direction: column;
+  }
+
+  .section_left,
+  .section_right {
+    flex: unset;
+    width: 100%;
+    min-height: 60svh;
+  }
+
+  .section_right {
+    min-height: 130vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .schedtitle_time_mobile {
+        width: 100%;
+  }
+  .paragraph, .dresscode_desc {
+    font-size: 16px;
+  }
+  .details .details_title {
+  font-size: 80px;
+}
+.gift-description {
+  font-size: 16px;
+}
+.details p {
+  font-size: 16px;
+  
+}
+  .container_title img {
+  display: block !important;
+}
+.container_title .names, .container_title .date {
+  display: none;
+}
+    .section_invite, .section_gift-guide, .section.left, .event_section, .entourage_section, .faqs_right, .rsvp_section {
+    padding: 80px 30px;
+  }
+  .invited {
+    margin-top: -15px;
+  }
+
+  .details h2 {
+    margin-bottom: 15px;
+  }
+
+  .img-btn,
+  .img-btn1 {
+    width: 180px;
+    height: 45px;
+  
+
+  }
+}
